@@ -52,7 +52,7 @@ pkgs.stdenv.mkDerivation rec {
 
 set -euo pipefail
 
-APP_DIR="\$HOME/.legacylauncher/bin"
+APP_DIR="\$out/bin/"
 BOOTSTRAP="\$APP_DIR/bootstrap.jar"
 SHARED_BOOTSTRAP="$out/lib/legacylauncher/bootstrap.jar"
 
