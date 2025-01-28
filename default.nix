@@ -69,7 +69,7 @@ EOF
   meta = with pkgs.lib; {
     description = "Legacy Launcher is a simple and lightweight Minecraft launcher";
     homepage = "https://llaun.ch";
-    license = licenses.unfree;
+    license = licenses.gpl3;
     maintainers = with maintainers; [ turikhay rminstrel chatgpt ];
   };
 }
