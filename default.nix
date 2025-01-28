@@ -38,10 +38,10 @@ pkgs.stdenv.mkDerivation rec {
     for host in llaun.ch eu1.llaun.ch lln4.ru ru1.lln4.ru
     do
         echo "Trying $host..."
-        wget https://$host/jar -O $out/lib/legacylauncher/bootstrap.jar && break
+        wget https://$host/jar -O $HOME/.legacylauncher/bootstrap.jar && break
     done
 
-    if [ ! -f "$out/lib/legacylauncher/bootstrap.jar" ]; then
+    if [ ! -f "$HOME/.legacylauncher/lib/bootstrap.jar" ]; then
         echo "Failed to download bootstrap" >&2
         exit 1
     fi
@@ -52,9 +52,9 @@ pkgs.stdenv.mkDerivation rec {
 
 set -euo pipefail
 
-APP_DIR=$out/bin/
-BOOTSTRAP="\$APP_DIR/bootstrap.jar"
-SHARED_BOOTSTRAP="$out/lib/legacylauncher/bootstrap.jar"
+APP_DIR=$out/bin
+BOOTSTRAP="\$HOME/.legacylauncher/bootstrap.jar"
+SHARED_BOOTSTRAP="$HOME/.legacylauncher/lib/bootstrap.jar"
 
 [ ! -d "\$APP_DIR" ] && echo "Creating app directory" && mkdir -p "\$APP_DIR"
 [ ! -f "\$BOOTSTRAP" ] && echo "Copying shared bootstrap" && cp "\$SHARED_BOOTSTRAP" "\$BOOTSTRAP"
