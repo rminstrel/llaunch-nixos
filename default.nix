@@ -2,7 +2,6 @@
 
 pkgs.stdenv.mkDerivation rec {
   pname = "legacylauncher";
-  version = "latest";
 
   # URL to the `.deb` file (replace with the correct URL and sha256 hash)
   src = pkgs.fetchurl {
@@ -69,7 +68,7 @@ EOF
   meta = with pkgs.lib; {
     description = "Legacy Launcher is a simple and lightweight Minecraft launcher";
     homepage = "https://llaun.ch";
-    license = licenses.gpl3;
+    license = licenses.free;
     maintainers = with maintainers; [ turikhay rminstrel chatgpt ];
   };
 }
