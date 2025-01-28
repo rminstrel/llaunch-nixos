@@ -2,6 +2,7 @@
 
 pkgs.stdenv.mkDerivation rec {
   pname = "legacylauncher";
+  version = "latest";
 
   # URL to the `.deb` file (replace with the correct URL and sha256 hash)
   src = pkgs.fetchurl {
